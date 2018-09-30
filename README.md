@@ -1,2 +1,2 @@
-# VPage
-自定义 Android ViewPager
+# Simple Android ViewPager
+Simple Android ViewPager
