@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
@@ -21,6 +23,7 @@ public class VPager extends RelativeLayout implements ViewPager.OnPageChangeList
     private IndicatorLayout indicatorLayout;
     private LayoutParams viewPagerParams;
     private LayoutParams indicatorLayoutParams;
+
 
     public VPager(@NonNull Context context) {
         super(context);
@@ -53,6 +56,14 @@ public class VPager extends RelativeLayout implements ViewPager.OnPageChangeList
         indicatorLayoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
         indicatorLayout.setLayoutParams(indicatorLayoutParams);
         addView(indicatorLayout);
+    }
+
+    public void setPageAdapter(@NonNull PagerAdapter adapter){
+        mViewPager.setAdapter(adapter);
+    }
+
+    public void setFragmentPageAdapter(@NonNull FragmentPagerAdapter adapter){
+        mViewPager.setAdapter(adapter);
     }
 
     @Override
